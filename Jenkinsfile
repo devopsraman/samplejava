@@ -11,7 +11,7 @@ pipeline {
             when {
                 expression { BRANCH_NAME ==~ /(master|staging)/ }
                 anyOf {
-                    environment name: 'DEPLOY_TO', value: 'production'
+                    environment name: 'DEPLOY_TO', value: 'master'
                     environment name: 'DEPLOY_TO', value: 'staging'
                 }
             }
